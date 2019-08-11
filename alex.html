@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+</head>
+<body>
+  <h1 onmousemove="doSomething()">Alexander Hamilton</h1>
+  <p onclick="secondFunction()">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+
+  <p id="x-coordinate"></p>
+  <p id="y-coordinate"></p>
+
+  <div class="products"></div>
+
+  <script>
+    var products = [
+      { id: 1, name: "Lightsaber", price: 100 },
+      { id: 2, name: "Yoda Sleeping Bag", price: 34 },
+      { id: 3, name: "Space Laser Gun", price: 40 }
+    ];
+
+    var productsHTML = "";
+
+    products.forEach(function(product) {
+      productsHTML += '<h2>' + product.name + '</h2>' + '<p>' + product.price + '</p>';
+    })
+
+    console.log('productsHTML');
+    console.log(productsHTML);
+
+   
+    var productsDiv = document.querySelector('.products');
+
+    productsDiv.innerHTML = productsHTML;
+
+
+
+    function doSomething() {
+    
+      console.log('you clicked on the header');
+      var x = event.clientX;     // Get the horizontal coordinate
+      var y = event.clientY;     // Get the vertical coordinate
+      var coor = "X coords: " + x + ", Y coords: " + y;
+      // console.log(coor);
+      var xTag = document.querySelector('#x-coordinate');
+      var yTag = document.querySelector('#y-coordinate');
+
+      xTag.innerHTML = x;
+      yTag.innerHTML = y;
+
+    }
+
+    function secondFunction() {
+      console.log('you clicked on the paragraph')
+    }
+  </script>
+</body>
+</html>
+
+</html>
